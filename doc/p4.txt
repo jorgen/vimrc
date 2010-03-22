@@ -1,0 +1,77 @@
+*p4.txt*	Plugin for perforce integration into vim
+
+This plugin provides functions to access different perforce functions from
+vim. To start using the global mappings and the commands, source this script
+from your startup vimrc file: >
+
+	runtime ftplugin/p4.vim
+
+1. Mappings	|p4-mappings|
+2. Commands	|p4-commands|
+3. Settings	|p4-settings|
+
+==============================================================================
+1. Mappings						*p4-mappings*
+
+See the |<Leader>| help page for a discussion on how to customize the
+mappings. The default is a backslash.
+
+GLOBAL MAPPINGS
+
+Global mappings can be used in all buffers.
+
+<Leader>e
+<Plug>P4Edit		Does a "p4 edit" on the current file.
+
+<Leader>f
+<Plug>P4Filelog		Does a "p4 filelog -l" on the current file.
+
+<Leader>d
+<Plug>P4Diff		Does a "p4 diff -du" on the current file.
+
+<Leader>a
+<Plug>P4Annotate	Does a "p4 annotate -q" on the current file.
+
+LOCAL MAPPINGS
+
+Local mappings can only be used in the p4 window.
+
+CTRL-]			If the word under the cursor is a number, this mapping
+			interprets it as a changenumber and does a
+				"p4 describe -du"
+			on it. Otherwise it interprets the word under the
+			cursor as a depot path and opens the file in a new
+			window.
+
+CTRL-T			Jumps back to the previous p4 display.
+
+==============================================================================
+2. Commands						*p4-commands*
+
+:Pdiff
+			Does a "p4 diff -du".
+
+:Pdiff {filename}
+			Does a "p4 diff -du {filename}".
+
+:Psync
+			Does a "p4 sync" on the current file.
+
+:Psync {changenumber}
+			Does a "p4 sync" on the current file to the change
+			number {changenumber}.
+
+:Pdescribe {changenumber}
+			Does a "p4 describe -du {changenumber}".
+
+:Pannotate {filename}	Does a "p4 annotate -q {filename}".
+
+==============================================================================
+3. Settings						*p4-settings*
+
+p4_command		string (default "p4")
+			This variable contains the command that the plugin
+			executes for p4 commands. You can set it before you
+			load the plugin to change the default.
+
+ vim:tw=78:ts=8:ft=help:norl:

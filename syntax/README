@@ -1,0 +1,13 @@
+To install the syntax files, copy them to ~/.vim/syntax and add the
+following lines to ~/.vim/filetype.vim (at least this is the way to do it
+for Vim 6 -- I am not sure about earlier versions):
+
+augroup filetypedetect
+au BufNewFile,BufRead *.pro,*.pri		setfiletype pro
+au BufNewFile,BufRead *.doc,*.book,*leaf	setfiletype doc
+au BufNewFile,BufRead,StdinReadPost *
+        \   if getline(1) =~ '# A Perforce.*' |
+        \       set syntax=p4 |
+        \       execute search( '<enter description here>' ) |
+        \   endif
+augroup END

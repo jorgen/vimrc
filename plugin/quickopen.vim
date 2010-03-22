@@ -1,0 +1,1 @@
+/home/jlind/dev/devtools/QUICKopen/bin/quickopen.vim
