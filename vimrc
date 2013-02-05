@@ -37,6 +37,14 @@ set path=,$QTSRCDIR/src/**,$QTDIR/src/**
 set tags=./tags,tags,$QTSRCDIR/src/tags,$QTDIR/src/tags
 
 colorscheme twsscheme
+
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
+
 set number
 " Allow us to remeber our place in a file.
 if has("autocmd")
