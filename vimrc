@@ -36,8 +36,6 @@ set path=,$QTSRCDIR/src/**,$QTDIR/src/**
 " a reasonable color scheme
 set tags=./tags,tags,$QTSRCDIR/src/tags,$QTDIR/src/tags
 
-colorscheme twsscheme
-
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
@@ -61,3 +59,12 @@ map ,cd :lcd %:p:h<CR>
 if filereadable(expand("$HOME/.myvimrc"))
     source $HOME/.myvimrc
 endif
+
+call pathogen#infect() 
+
+"lldb shortcuts
+map <F6> :Lbreakpoint<CR>
+map <F7> :Lstepin<CR>
+map <F8> :Lnext<CR>
+map <F9> :Lfinish<CR>
+map <F10> :Lcontinue<CR>
