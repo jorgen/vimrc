@@ -32,7 +32,7 @@ runtime ftplugin/taglist.vim
 set tags=./tags,tags,$QTSRCDIR/src/tags,$QTDIR/src/tags
 
 " allow vim find to find a Qt source file anytime w/o knowing the directory" layout
-set path=,$QTSRCDIR/src/**,$QTDIR/src/**
+set path=,$BS_VIM_SEARCH_PATH/**
 " a reasonable color scheme
 set tags=./tags,tags,$QTSRCDIR/src/tags,$QTDIR/src/tags
 
@@ -60,11 +60,3 @@ if filereadable(expand("$HOME/.myvimrc"))
     source $HOME/.myvimrc
 endif
 
-call pathogen#infect() 
-
-"lldb shortcuts
-map <F6> :Lbreakpoint<CR>
-map <F7> :Lstepin<CR>
-map <F8> :Lnext<CR>
-map <F9> :Lfinish<CR>
-map <F10> :Lcontinue<CR>
