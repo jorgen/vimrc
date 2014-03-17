@@ -23,18 +23,11 @@ set sm
 set ruler
 set title
 set hidden
-" Rainer's p4 plugin
-runtime ftplugin/p4.vim
-" The great 'a plugin' to switch between header/source
-runtime ftplugin/a.vim
-" The taglist plugin 
-runtime ftplugin/taglist.vim
-set tags=./tags,tags,$QTSRCDIR/src/tags,$QTDIR/src/tags
+" The taglist plugin
+set tags=./tags,tags
 
 " allow vim find to find a Qt source file anytime w/o knowing the directory" layout
 set path=,$BS_VIM_SEARCH_PATH/**
-" a reasonable color scheme
-set tags=./tags,tags,$QTSRCDIR/src/tags,$QTDIR/src/tags
 
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
@@ -54,9 +47,4 @@ endif
 
 " smart cd
 map ,cd :lcd %:p:h<CR>
-
-" Allow to load in your own items
-if filereadable(expand("$HOME/.myvimrc"))
-    source $HOME/.myvimrc
-endif
 
