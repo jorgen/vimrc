@@ -23,10 +23,10 @@ set sm
 set ruler
 set title
 set hidden
-" The taglist plugin
-set tags=./tags,tags
-
-" allow vim find to find a Qt source file anytime w/o knowing the directory" layout
+set cino+=g0
+set cino+=(0
+set cino+=:0
+set cino+=l1
 set path=,$BS_VIM_SEARCH_PATH/**
 
 highlight ExtraWhitespace ctermbg=red guibg=red
