@@ -5,6 +5,7 @@ set incsearch
 set hidden
 set autowrite
 set makeprg=ninja
+set number
 
 map <F4> :e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>
 

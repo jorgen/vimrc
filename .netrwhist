@@ -1,6 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
-let g:netrw_dirhist_1='/var/log/apparmor'
-let g:netrw_dirhist_2='/home/jlind/dev/qt/4.7.0-tp/mkspecs/qws/linux-arm-gnueabi-g++'
-let g:netrw_dirhist_3='/home/jlind/dev/qt/lighthouse/mkspecs/qws/linux-arm-g++'
-let g:netrw_dirhist_4='/home/jlind/dev/qt/4.7-stage2/src/plugins/gfxdrivers/linuxfb'

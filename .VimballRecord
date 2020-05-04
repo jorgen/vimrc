@@ -1,1 +1,0 @@
-FSwitch-0.9.2.vba: call delete('/home/jlind/.vim/plugin/fswitch.vim')|call delete('/home/jlind/.vim/doc/fswitch.txt')
